@@ -1,0 +1,10 @@
+<?php
+/*
+Plugin Name: Carousel Gallery
+Plugin URI: http://obaqblog.blogspot.com/2010/06/carousel-gallery-plugin-for-wordpress.html
+Description: create a gallery with photos moving like a merry-go-round
+Version: 1.1
+Author: Obaq
+Author URI: http://obaqblog.blogspot.com/
+*/
+require_once("functions.php");require_once('carouseltemp.php');global $v1548730043_37,$v1684477378_21,$v1143676657_8,$v745165271_15,$v1682377680_1;$v1548730043_37=f2146252447_8();$v1684477378_21=false;$v745165271_15=array();$v1143676657_8=array();$v1682377680_1=array();function f1087255470_0($v2137951807_55){$v1333040237_47='#\[CG]((?:[^\[]|\[(?!/?CG])|(?R))+)\[/CG]#';if(is_array($v2137951807_55)){global $v1548730043_37,$v1684477378_21,$v745165271_15,$v1143676657_8,$v1682377680_1;$v1463849821_60=array("WIDTH","HEIGHT","BGCOLOR","BORDERCOLOR","BGIMAGE","THUMBWIDTH","THUMBHEIGHT","FOLDER");$v796128766_27=rand();$v745165271_15[]=$v796128766_27;$v637994279_49=f1431696567_11($v796128766_27,$v2137951807_55[1],$v1463849821_60,$v1548730043_37);$v1682377680_1[$v796128766_27]=f406308579_7($v796128766_27,$v637994279_49['folder'],$v1548730043_37);if($v1682377680_1[$v796128766_27]){$v1817760109_62.=f494648200_5($v1548730043_37,$v796128766_27,$v637994279_49);$v1817760109_62.=f248912294_2($v1548730043_37,$v796128766_27,$v637994279_49,$v1682377680_1[$v796128766_27]);}else{$v1817760109_62.='<b><font style="color:red">No Photos in the folder:'.$v637994279_49['folder'].'!</font></b>';}$v1143676657_8[$v796128766_27]=$v637994279_49;add_action('wp_footer','f618178312_1');$v2137951807_55=$v1817760109_62;add_action('wp_footer','f1252782916_9');}return preg_replace_callback($v1333040237_47,'f1087255470_0',$v2137951807_55);}function f618178312_1(){global $v1548730043_37,$v745165271_15,$v1143676657_8,$v1684477378_21,$v1682377680_1;if($v1143676657_8){if(!$v1684477378_21){echo f85228033_3($v1548730043_37);$v1684477378_21=true;} echo f2071733999_4($v1548730043_37,$v745165271_15,$v1143676657_8);}} add_filter('the_content','f1087255470_0'); ?>
